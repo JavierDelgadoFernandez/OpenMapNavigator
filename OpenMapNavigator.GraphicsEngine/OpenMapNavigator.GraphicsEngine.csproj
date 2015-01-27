@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0012E289-DC8E-4149-B6BD-16636E9F2003}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenMapNavigator.GraphicsEngine</RootNamespace>
+    <AssemblyName>OpenMapNavigator.GraphicsEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\OpenMapNavigator.Engine\OpenMapNavigator.Engine.csproj">
+      <Project>{ac9ebf32-671e-4214-a86b-cc7a1c2ee4c0}</Project>
+      <Name>OpenMapNavigator.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenMapNavigator.MapElements\OpenMapNavigator.MapElements.csproj">
+      <Project>{8a7ab84e-ee44-48c6-a160-83e1092ca622}</Project>
+      <Name>OpenMapNavigator.MapElements</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GraphicNavigator.cs" />
+    <Compile Include="Graphics\Elements\WayBinding.cs" />
+    <Compile Include="Graphics\Units\IElement.cs" />
+    <Compile Include="Graphics\Units\IGraphic.cs" />
+    <Compile Include="Graphics\PartialGraphicMap.cs" />
+    <Compile Include="Graphics\Units\GraphicCoordinate.cs" />
+    <Compile Include="Graphics\Units\ISegment.cs" />
+    <Compile Include="Graphics\Units\PolarGraphicCoordinate.cs" />
+    <Compile Include="Graphics\Units\Segment.cs" />
+    <Compile Include="Graphics\Units\SegmentJunction.cs" />
+    <Compile Include="Graphics\Units\VertexConfiguration.cs" />
+    <Compile Include="Graphics\Units\WayGraphic.cs" />
+    <Compile Include="Graphics\Util\Square.cs" />
+    <Compile Include="Graphics\Util\Triangle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows8\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
